@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Threats to Marine Life</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #023e8a, #48cae4);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+        }
+        nav { background-color: #023e8a; padding: 12px; }
+        nav a { color: white; text-decoration: none; padding: 10px 15px; display: inline-block; }
+        .dropdown { display: inline-block; position: relative; }
+        .dropdown-content {
+            display: none; position: absolute; background-color: white;
+            min-width: 180px; box-shadow: 0 2px 8px gray; z-index: 1;
+        }
+        .dropdown-content a { color: #073b4c; display: block; text-align: left; }
+        .dropdown-content a:hover { background-color: #caf0f8; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .container { padding: 40px 20px; }
+        h1 { font-size: 42px; margin-bottom: 15px; }
+        .intro { font-size: 18px; line-height: 1.6; max-width: 800px; margin: auto; }
+        .threats {
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 20px; margin-top: 35px;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.15);
+            width: 250px; padding: 20px; border-radius: 15px;
+        }
+        .card h2 { font-size: 22px; }
+        .card p { line-height: 1.5; }
+        h2 { margin-top: 45px; }
+        button {
+            padding: 12px 25px; font-size: 17px; border: none;
+            border-radius: 8px; cursor: pointer; margin-top: 15px;
+        }
+        button:hover { background-color: #caf0f8; }
+        #measures { margin: 25px auto; max-width: 700px; font-size: 18px; line-height: 1.8; }
+        @media (max-width: 768px) {
+            h1 { font-size: 34px; }
+            .container { padding: 30px 15px; }
+            .card { width: 45%; }
+            .intro { font-size: 17px; }
+        }
+        @media (max-width: 480px) {
+            nav a { display: block; }
+            .dropdown { display: block; }
+            .dropdown-content { position: static; width: 100%; }
+            h1 { font-size: 28px; }
+            .card { width: 100%; }
+            button { width: 90%; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <a href="#">Explore ▼</a>
+            <div class="dropdown-content">
+                <a href="threats.html">Threats to Marine Life</a>
+                <a href="conservation.html">Conservation Measures</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>⚠️ Threats to Marine Life</h1>
+        <p class="intro">Marine ecosystems face several threats caused by human activities and environmental changes. These threats can damage ocean habitats and put marine species at risk.</p>
+        <div class="threats">
+            <div class="card"><h2>🗑️ Plastic Pollution</h2><p>Plastic waste can enter oceans and harm marine animals. It can also pollute beaches and marine habitats.</p></div>
+            <div class="card"><h2>🎣 Overfishing</h2><p>Excessive fishing can reduce fish populations and disturb the natural balance of marine ecosystems.</p></div>
+            <div class="card"><h2>🌡️ Climate Change</h2><p>Rising ocean temperatures and changing ocean conditions can affect marine species and coral reefs.</p></div>
+            <div class="card"><h2>🪸 Habitat Destruction</h2><p>Damage to coral reefs, mangroves and other marine habitats can reduce safe places for marine species to live.</p></div>
+        </div>
+        <h2>🌱 How to Conserve?</h2>
+        <button onclick="showMeasures()">Show Conservation Measures</button>
+        <div id="measures"></div>
+    </div>
+    <script>
+        function showMeasures() {
+            document.getElementById("measures").innerHTML = `
+                <h3>🌊 Conservation Measures</h3>
+                <p>♻️ Reduce the use of single-use plastics.</p>
+                <p>🗑️ Dispose of waste properly and keep beaches clean.</p>
+                <p>🐟 Support sustainable fishing practices.</p>
+                <p>🪸 Help protect coral reefs, mangroves and marine habitats.</p>
+                <p>🏖️ Participate in beach and coastal clean-up activities.</p>
+                <p>📢 Spread awareness about marine conservation.</p>
+            `;
+        }
+    </script>
+</body>
+</html>

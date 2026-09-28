@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; background-color: lightblue; margin: 0; }
+        nav { background-color: #023e8a; text-align: center; padding: 12px; }
+        nav a { color: white; text-decoration: none; padding: 10px 15px; display: inline-block; }
+        .dropdown { display: inline-block; position: relative; }
+        .dropdown-content { display: none; position: absolute; background-color: white; min-width: 180px; box-shadow: 0 2px 8px gray; z-index: 1; }
+        .dropdown-content a { color: #073b4c; display: block; text-align: left; }
+        .dropdown-content a:hover { background-color: #eaf8ff; }
+        .dropdown:hover .dropdown-content { display: block; }
+        header { background-color: darkblue; color: white; text-align: center; padding: 25px; }
+        section { background-color: white; margin: 25px auto; padding: 25px; border-radius: 10px; max-width: 800px; }
+        h2 { color: darkblue; }
+        input, textarea, select { width: 90%; padding: 10px; margin-top: 5px; margin-bottom: 15px; }
+        button { background-color: darkblue; color: white; padding: 12px 25px; border: none; cursor: pointer; border-radius: 5px; }
+        button:hover { background-color: blue; }
+        #message { color: darkblue; font-weight: bold; font-size: 17px; }
+        footer { background-color: black; color: white; text-align: center; padding: 15px; }
+        @media (max-width: 768px) {
+            section { margin: 20px; padding: 20px; }
+            input, textarea, select { width: 100%; }
+        }
+        @media (max-width: 480px) {
+            nav a { display: block; } .dropdown { display: block; }
+            .dropdown-content { position: static; width: 100%; }
+            header h1 { font-size: 27px; } section { margin: 15px; padding: 18px; }
+            button { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <a href="#">Explore ▼</a>
+            <div class="dropdown-content">
+                <a href="threats.html">Threats to Marine Life</a>
+                <a href="conservation.html">Conservation Measures</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <header><h1>Feedback</h1><p>We Would Love to Hear From You</p></header>
+    <section>
+        <h2>Feedback Form</h2>
+        <form onsubmit="submitFeedback(event)">
+            <label>Name:</label><br>
+            <input type="text" id="name" required><br>
+            <label>Email:</label><br>
+            <input type="email" id="email" required><br>
+            <label>How was our website?</label><br>
+            <select id="rating" required>
+                <option value="">Select Rating</option>
+                <option>Excellent</option>
+                <option>Good</option>
+                <option>Average</option>
+                <option>Needs Improvement</option>
+            </select><br>
+            <label>Your Feedback:</label><br>
+            <textarea id="feedback" rows="6" placeholder="Write your feedback here..." required></textarea><br>
+            <button type="submit">Submit Feedback</button>
+        </form>
+        <p id="message"></p>
+    </section>
+    <footer>
+        <p>© 2026 Marine Life Conservation</p>
+        <p>Protect Marine Life • Protect Our Oceans</p>
+    </footer>
+    <script>
+        function submitFeedback(event) {
+            event.preventDefault();
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let rating = document.getElementById("rating").value;
+            let feedback = document.getElementById("feedback").value;
+            if (name == "" || email == "" || rating == "" || feedback == "") {
+                document.getElementById("message").innerHTML = "Please fill all the fields.";
+                return;
+            }
+            document.getElementById("message").innerHTML =
+                "Thank you " + name + "! Your feedback has been received. Your email is " + email + ".";
+        }
+    </script>
+</body>
+</html>

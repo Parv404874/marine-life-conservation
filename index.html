@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marine Life Conservation</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #eaf8ff;
+            color: #073b4c;
+        }
+        nav {
+            background-color: #023e8a;
+            text-align: center;
+            padding: 12px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+        }
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 180px;
+            box-shadow: 0 2px 8px gray;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: #073b4c;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover { background-color: #eaf8ff; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .hero {
+            background-color: #0077b6;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .hero h1 { font-size: 48px; margin: 0 0 20px 0; }
+        .hero h2 { font-size: 25px; font-weight: normal; margin: 0; }
+        .content {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 25px;
+            text-align: center;
+        }
+        .content p { font-size: 19px; line-height: 1.7; }
+        .ocean-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 15px;
+        }
+        .explore-button {
+            margin-top: 30px;
+            padding: 14px 30px;
+            font-size: 18px;
+            background-color: #00b4d8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .explore-button:hover { background-color: #0096c7; }
+        #actionMessage {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #0077b6;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #023e8a;
+            color: white;
+            text-align: center;
+        }
+        footer p { margin: 0; }
+        @media (max-width: 768px) {
+            .hero { padding: 50px 15px; }
+            .hero h1 { font-size: 34px; }
+            .hero h2 { font-size: 21px; }
+            .content { padding: 0 15px; }
+            .content p { font-size: 17px; }
+            nav a { padding: 8px 10px; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 28px; }
+            .hero h2 { font-size: 18px; }
+            .explore-button { width: 90%; font-size: 16px; }
+            nav a { display: block; }
+            .dropdown { display: block; }
+            .dropdown-content { position: static; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <a href="#">Explore ▼</a>
+            <div class="dropdown-content">
+                <a href="threats.html">Threats to Marine Life</a>
+                <a href="conservation.html">Conservation Measures</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <section class="hero">
+        <h1>Marine Life Conservation — Learn, Act, Protect</h1>
+        <h2>Save Our Oceans — Small Actions, Big Impact</h2>
+    </section>
+    <section class="content">
+        <p>Our oceans are home to millions of marine organisms and are essential for life on Earth.</p>
+        <p>Marine life conservation means protecting marine animals, plants, coral reefs and ocean habitats from harmful human activities.</p>
+        <img class="ocean-image" src="ocean.jpg" alt="Marine life in the ocean">
+        <br>
+        <button class="explore-button" onclick="takeAction()">Explore & Take Action</button>
+        <p id="actionMessage"></p>
+    </section>
+    <footer><p>Protect Our Oceans • Protect Our Future</p></footer>
+    <script>
+        function takeAction() {
+            document.getElementById("actionMessage").innerHTML =
+                "🌊 Take action today: Reduce plastic use and help protect our oceans!";
+        }
+    </script>
+</body>
+</html>
